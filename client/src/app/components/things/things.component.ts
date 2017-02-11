@@ -15,7 +15,7 @@ export class ThingsComponent implements OnInit {
   ngOnInit() {
     this._thingsService.getThingsByUser().subscribe(things => {
       console.log(things);
-      this.things = things;
+      this.things = things;      
     });
   }
 }

@@ -10,18 +10,46 @@
           "value": "john"
         }
       ]
+    },
+    {
+      "userID": "nariman",
+      "username": "nariman",
+      "password": "nariman",
+      "attributes": [
+        {
+          "name": "userID",
+          "value": "nariman"
+        }
+      ]
+    },
+    {
+      "userID": "sheina",
+      "username": "sheina",
+      "password": "sheina",
+      "attributes": [
+        {
+          "name": "userID",
+          "value": "sheina"
+        }
+      ]
     }
   ],
   "things": [
     {
       "thingID": "1",
       "userID": "john",
-      "someProperty": "8716948000003"
+      "someProperty": "15"
     },
     {
       "thingID": "2",
-      "userID": "john",
-      "someProperty": "124914266456"
+      "userID": "nariman",
+      "someProperty": "-10"
+    },
+    {
+      "thingID": "3",
+      "userID": "sheina",
+      "someProperty": "-10"
     }
+
   ]
 }

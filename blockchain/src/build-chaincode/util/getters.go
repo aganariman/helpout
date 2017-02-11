@@ -36,7 +36,7 @@ func GetThingsByUserID(stub shim.ChaincodeStubInterface, userID string) ([]strin
 		}
 
 		if thing.UserID == userID {
-			thingIDs = append(thingIDs, thing.ThingID)
+			thingIDs = append(thingIDs, thing.SomeProperty)
 		}
 	}
 

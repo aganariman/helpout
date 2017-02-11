@@ -93,6 +93,8 @@ func (t *Chaincode) GetQueryResult(stub shim.ChaincodeStubInterface, functionNam
 			return nil, errors.New("could not retrieve things by user id: " + args[0] + ", reason: " + err.Error())
 		}
 
+		//logger.Infof("things by user QueryResult:")
+
 		return thingsByUserID, nil
 	}
 

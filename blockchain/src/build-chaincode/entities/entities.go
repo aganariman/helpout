@@ -19,7 +19,7 @@ type User struct {
 	Username 	string 	`json:"username"`
 	Password 	string 	`json:"password"`
 	Salt     	string 	`json:"salt"`
-	Hash     	string 	`json:"hash"`
+	Hash     	string 	`json:"hash"`	
 }
 
 type Thing struct {

@@ -20,6 +20,10 @@ export class ThingsComponent implements OnInit {
     });
   }
   
-
+ public sendtime() {
+    
+    this._router.navigate(['./sendtime']); //todo: add success form
+      
+    }
 
 }

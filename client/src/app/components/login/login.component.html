@@ -1,9 +1,16 @@
-<div>
-  <h1>Please enter your helpout wallet id and your secret</h1>
-  <div>
-    <input type="text" placeholder="WalletId" autofocus [(ngModel)]="username">
-    <input type="password" placeholder="Secret" [(ngModel)]="password">
+<div style="text-align: center">
+  <h1>Enter your credentials</h1>
+  
+  <div >
+    
+    <input type="text" placeholder="WalletId" autofocus [(ngModel)]="username" style="width:80% "> 
+    
+    <br/>
+
+    <input type="password" placeholder="Secret" [(ngModel)]="password" style="width:80% ">
+    <br>
     <br>
     <button (click)="login(username, password)">Submit</button>
+    
   </div>
 </div>

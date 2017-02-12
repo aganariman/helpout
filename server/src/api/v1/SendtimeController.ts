@@ -28,6 +28,4 @@ export class SendtimeController {
         let enrollmentID = new JSONWebToken(request).getUserID();
         return request.blockchain.invoke('createThing', [JSON.stringify(thing)], enrollmentID);
     }
-
-    
 }

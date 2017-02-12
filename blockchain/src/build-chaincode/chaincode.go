@@ -52,20 +52,13 @@ func (t *Chaincode) Invoke(stub shim.ChaincodeStubInterface, functionName string
 		util.StoreObjectInChain(stub, thing.ThingID, util.ThingsIndexName, thingAsBytes)
 
 		return nil, nil
-	}
-	else if functionName == "transferTime"
-	{
+	} else if functionName == "transferTime" {
 		thingAsJSON := args[0]
 
 		var thing entities.Thing
 		if err := json.Unmarshal([]byte(thingAsJSON), &thing); err != nil {
 			return nil, errors.New("Error while unmarshalling thing, reason: " + err.Error())
-		}
-
-		thingAsBytes, err := json.Marshal(thing);
-		if err != nil {
-			return nil, errors.New("Error marshalling thing, reason: " + err.Error())
-		}
+		}				
 
 		// userId=targetwalletid, someProperty = amount of hours
 		util.TransferBalance(stub, thing.UserID,  thing.SomeProperty)

@@ -1,8 +1,11 @@
 
-<div *ngFor="let thing of things">
+<br>
+
+<div *ngFor="let thing of things" >
     <div>
-        Your current balance is: {{thing}}
+        <h3>Your current balance is: {{thing}}</h3>
+        
     </div>
 </div>
-
-<button (click)="sendtime(username, password)">Send a time reward</button>
+<br>
+<button (click)="sendtime()">Send a time reward</button>

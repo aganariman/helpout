@@ -1,0 +1,9 @@
+<div>
+  <h1>Please enter transaction details</h1>
+  <div>
+    <input type="text" placeholder="Reciever wallet id" autofocus [(ngModel)]="recieverwalletid">
+    <input type="text" placeholder="Duration of help (in hours)" [(ngModel)]="helpamount">
+    <br>
+    <button (click)="sendtime(recieverwalletid, helpamount)">Send</button>
+  </div>
+</div>

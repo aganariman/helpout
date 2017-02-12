@@ -10,15 +10,18 @@ import {AuthGuard} from './guards/index';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './components/login/login.component';
 import {ThingsComponent} from './components/things/things.component';
+import {SendtimeComponent} from './components/sendtime/sendtime.component';
 
 import {ThingService} from './services/thing.service'
+import {SendtimeService} from './services/sendtime.service'
 import {AuthenticationService} from './services/authentication.service'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ThingsComponent
+    ThingsComponent,
+    SendtimeComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import {AuthenticationService} from './services/authentication.service'
     Configuration,
     AuthenticationService,
     AuthGuard,
-    ThingService
+    ThingService,
+    SendtimeService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ThingService} from '../../services/thing.service'
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-things',
@@ -9,7 +10,7 @@ import {ThingService} from '../../services/thing.service'
 export class ThingsComponent implements OnInit {
   private things: any;
 
-  constructor(private _thingsService: ThingService) {
+  constructor(private _router: Router, private _thingsService: ThingService) {
   }
 
   ngOnInit() {
@@ -18,4 +19,7 @@ export class ThingsComponent implements OnInit {
       this.things = things;      
     });
   }
+  
+
+
 }

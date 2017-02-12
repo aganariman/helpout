@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import {Observable} from 'rxjs';
 import 'rxjs/add/operator/map';
 
 import {Configuration} from '../app.constants';
@@ -24,4 +25,13 @@ export class ThingService {
       .get(this.actionUrl + '/' + user.userID, {headers: this.headers})
       .map(res => res.json());
   }
+
+  // public sendThingFromUser(reciever: string, amount: string) {
+    
+  //   let user: any = JSON.parse(localStorage.getItem('currentUser')).user;                
+
+  //   this._http.post(this.actionUrl + '/' + user.userID, {headers: this.headers, reciever: reciever, amount: amount});
+      
+  // }
+
 }

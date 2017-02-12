@@ -1,9 +1,9 @@
 import {Get, Post, JsonController, Param, Body, Req, UseBefore} from 'routing-controllers';
 import {JSONWebToken} from '../../utils/JSONWebToken';
 import {Thing} from '../../entities/thing.model';
-import {UserAuthenticatorMiddleware} from '../../middleware/UserAuthenticatorMiddleware';
-import {CORSMiddleware} from '../../middleware/CORSMiddleware';
 import {LoggerFactory} from '../../utils/LoggerFactory';
+import {CORSMiddleware} from '../../middleware/CORSMiddleware';
+import {UserAuthenticatorMiddleware} from '../../middleware/UserAuthenticatorMiddleware';
 import {Service} from 'typedi';
 
 @JsonController('/things')
@@ -21,8 +21,9 @@ export class ThingsController {
 
     @Post('/')
     public post(@Body() thing: Thing, @Req() request: any): any {
-        let enrollmentID = new JSONWebToken(request).getUserID();
-
-        return request.blockchain.invoke('createThing', [JSON.stringify(thing)], enrollmentID);
+        //let enrollmentID = new JSONWebToken(request).getUserID();
+        this.loggerFactory.create().debug('TEMP: sendtime post body: ');
+        return;
+        //return request.blockchain.invoke('createThing', [JSON.stringify(thing)], enrollmentID);
     }
 }

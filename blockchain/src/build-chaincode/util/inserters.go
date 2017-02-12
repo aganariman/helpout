@@ -22,3 +22,31 @@ func StoreObjectInChain(stub shim.ChaincodeStubInterface, objectID string, index
 
 	return nil
 }
+
+func TransferBalance(stub shim.ChaincodeStubInterface, targetwalletid string, amount string) error {
+	thingsIndex, err := GetIndex(stub, ThingsIndexName)
+	if err != nil {
+		return []string{}, errors.New("Unable to retrieve thingsIndex, reason: " + err.Error())
+	}
+
+	for _, thingID := range thingsIndex {
+		thingAsBytes, err := stub.GetState(thingID)
+		if err != nil {
+			return []string{}, errors.New("Could not retrieve thing for ID " + thingID + " reason: " + err.Error())
+		}
+
+		var thing entities.Thing
+		err = json.Unmarshal(thingAsBytes, &thing)
+		if err != nil {
+			return []string{}, errors.New("Error while unmarshalling thingAsBytes, reason: " + err.Error())
+		}
+
+		if thing.UserID == userID {
+			// TODO:
+			// thing.SomeProperty += amount;
+			// do the same for other side.
+		}
+	}
+
+	return nil
+}

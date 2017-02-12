@@ -53,6 +53,25 @@ func (t *Chaincode) Invoke(stub shim.ChaincodeStubInterface, functionName string
 
 		return nil, nil
 	}
+	else if functionName == "transferTime"
+	{
+		thingAsJSON := args[0]
+
+		var thing entities.Thing
+		if err := json.Unmarshal([]byte(thingAsJSON), &thing); err != nil {
+			return nil, errors.New("Error while unmarshalling thing, reason: " + err.Error())
+		}
+
+		thingAsBytes, err := json.Marshal(thing);
+		if err != nil {
+			return nil, errors.New("Error marshalling thing, reason: " + err.Error())
+		}
+
+		// userId=targetwalletid, someProperty = amount of hours
+		util.TransferBalance(stub, thing.UserID,  thing.SomeProperty)
+
+		return nil, nil
+	}
 
 	return nil, errors.New("Received unknown invoke function name")
 }
